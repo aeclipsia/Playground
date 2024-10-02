@@ -1,0 +1,91 @@
+:root {
+    --border: rgb(3, 169, 244);
+    --g1: rgb(98, 0, 234);
+    --g2: rgb(236, 64, 122);
+    --g3: rgb(253, 216, 53);
+}
+
+body {
+    background-color: #0a0a0a;
+}
+
+.card {
+    border: 0.5vmin solid var(--border);
+    width: 56vmin;
+    cursor: pointer;
+    position: relative;
+    aspect-ratio: 1 / 1.6;
+    z-index: 0;
+}
+
+.card:before {
+    content: "";
+    background: linear-gradient(130deg,
+            transparent 0% 33%,
+            var(--g1) 66%,
+            var(--g2) 83.5%,
+            var(--g3) 100%);
+    background-position: 0% 0%;
+    background-size: 300% 300%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: background-position 350ms ease,
+        transform 350ms ease;
+    z-index: -1;
+}
+
+.card:hover:before {
+    background-position: 100% 100%;
+    transform: scale(1.08, 1.03);
+}
+
+.card-content {
+    background: radial-gradient(rgba(255, 255, 255, 0.2) 8%,
+            transparent 8%);
+    background-position: 0% 0%;
+    background-size: 5vmin 5vmin;
+    height: calc(100% - 10vmin);
+    width: calc(100% - 10vmin);
+    padding: 5vmin;
+    transition: background-position 350ms ease;
+    z-index: 2;
+}
+
+.card:hover > .card-content {
+    background-position: -10% 0%;
+}
+
+.card-title,
+.card-subtitle {
+    color: #f5f5f5;
+    font-family: sans-serif;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.card-title {
+    font-size: 6vmin;
+}
+
+.card-subtitle {
+    font-size: 3vmin;
+    margin-top: 2vmin;
+}
+
+.card-subtitle-word {
+    opacity: 0;
+    display: inline-block;
+    margin: 0vmin 0.3vmin;
+    position: relative;
+    transform: translateY(40%);
+    transition: none;
+}
+
+.card:hover > .card-content > .card-subtitle > .card-subtitle-word {  
+    opacity: 1;
+    transform: translateY(0%);
+    transition: opacity 0ms, transform 200ms cubic-bezier(.90, .06, .15, .90);
+}

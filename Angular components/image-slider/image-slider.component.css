@@ -1,0 +1,29 @@
+:host {
+    display: block;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+html, body {
+    height: 100%; /* Ensure body takes full height */
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+#image-track {
+    display: flex;
+    gap: 4vmin; /* Responsive gap */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0%, -50%); /* Center the track */
+    will-change: transform; 
+}
+
+#image-track > img {
+    width: 40vmin; /* Use viewport units for responsiveness */
+    height: 56vmin; /* Maintain aspect ratio */
+    object-fit: cover;
+    object-position: 100% 50%;
+}

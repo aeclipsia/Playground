@@ -1,0 +1,58 @@
+:root{
+    --blue: rgb(61, 90, 254);
+    --light-blue: rgb(33, 150, 243);
+    --pink: rgb(200, 147, 244);
+}
+
+body{
+    background-color: #121212;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.link{
+    display: block;
+    color: #f9f9f9;
+    font-size: clamp(2em, 8vw, 7em);
+    padding: clamp(0.25em, 1vw, 1em) clamp(1em, 4vw, 4em);
+    font-family: "Space Grotesk", sans-serif;
+    text-decoration: none;
+    border-top: 1px solid rgba(249, 249, 249, 0.5);
+    position: relative;
+    z-index: 1;
+    transition: color 300ms ease-in-out;
+}
+
+.link:hover{
+    color: var(--pink);
+}
+
+.link:hover:before{
+    width: 100%;
+}
+
+.link:before{
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--blue),
+        var(--light-blue) var(--color-percent),
+        var(--pink)
+    );
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    transition: width 300ms ease-in-out;
+    z-index: -1;
+}
+
+.link:last-of-type{
+    border-bottom: 1px solid rgba(249, 249, 249, 0.5);
+}
