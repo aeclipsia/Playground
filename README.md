@@ -33,6 +33,6 @@ Here are some of the tools I might be playing around with in these projects:
 
 ## 📬 Get in Touch
 
-- Follow me on [GitHub](https://github.com/yourusername)!
+- Follow me on [GitHub](https://github.com/aeclipsia)!
 
 Thanks for stopping by! 💖
